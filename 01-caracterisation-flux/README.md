@@ -24,6 +24,7 @@ Classification des flux MediLab (téléphonie IP, application LIMS, messagerie E
 ### 2. Calcul de bande passante VoIP
 Calcul du nombre d'appels simultanés en heure de pointe, de la bande passante VoIP nécessaire, et vérification de la suffisance de la liaison 100 Mbps.
 A partir des données trafic fournies par l'équipe IT la bande passante VoIP nécessaire est calculée ci-dessous:
+
 | Eléments | valeur/calcul|resultat|
 |---|---|---|---|
 | appels simultanés maximum | 60 × 87 kbps | 5 220 kbps |
