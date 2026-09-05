@@ -14,13 +14,11 @@ Données trafic fournies par l'équipe IT de MediLab :
 Classification des flux MediLab (téléphonie IP, application LIMS, messagerie Exchange, partage de fichiers, sauvegardes, navigation web) selon leur type (temps réel / interactif / transactionnel / bulk), leur protocole/port et leur priorité QoS.
 
 
-Flux	Type	Proto/Port	Priorité QoS
-Téléphonie IP|          |           |           |			
-Application LIMS			
-Messagerie Exchange			
-Partage fichiers			
-Sauvegardes			
-Navigation web			
+| Flux | Type | Proto/Port | Priorité QoS |
+|---|---|---|---|
+| Téléphonie IP | Temps réel | UDP/RTP | Haute |
+| Application LIMS | Transactionnel | TCP/443 | Moyenne |
+| Sauvegardes | Bulk | TCP/22 | Basse |			
 
 
 ### 2. Calcul de bande passante VoIP
