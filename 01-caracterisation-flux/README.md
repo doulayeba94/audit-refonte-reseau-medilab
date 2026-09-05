@@ -16,11 +16,11 @@ Classification des flux MediLab (téléphonie IP, application LIMS, messagerie E
 
 Flux	Type	Proto/Port	Priorité QoS
 Téléphonie IP|          |           |           |			
-Application LIMS			
-Messagerie Exchange			
-Partage fichiers			
-Sauvegardes			
-Navigation web			
+Application LIMS|        |          |          |		
+Messagerie Exchange|        |          |          |			
+Partage fichiers|          |            |            |			
+Sauvegardes|        |          |          |
+Navigation web|            |            |            |
 
 
 ### 2. Calcul de bande passante VoIP
