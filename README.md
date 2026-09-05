@@ -12,6 +12,7 @@ Ce dépôt documente les 5 étapes de la mission, de l'analyse des flux existant
 
 | Étape | Dossier | Objectif |
 |---|---|---|
+| 0 | [`00-cadrage-mission`](./00-cadrage-mission) | Cadrer la mission : périmètre, objectifs, référentiel (HDS, EBIOS RM), parties prenantes et contraintes |
 | 1 | [`01-caracterisation-flux`](./01-caracterisation-flux) | Identifier et qualifier les flux réseau existants (voix, applicatifs, VPN) |
 | 2 | [`02-audit-diagnostic`](./02-audit-diagnostic) | Diagnostiquer l'infrastructure existante à partir des métriques de supervision, identifier les goulots d'étranglement et produire un rapport d'audit |
 | 3 | [`03-architecture-cible`](./03-architecture-cible) | Concevoir l'architecture réseau cible (dimensionnement WAN, plan d'adressage/VLAN, politique QoS) |
