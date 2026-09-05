@@ -46,7 +46,8 @@ Construction de la matrice de flux (source, destination, protocole/port, descrip
 | poste labo ↔ Srv-LIMS | Srv LIMS             | TCP/443             |  accés application LIMS  | critique |
 | téléphonie IP ↔ IPBX | Srv-IPBX | UDP/5060 | Signalisation SIP | haute |
 | Srv-LIMS ↔ Sécurité Sociale | Sécurité Sociale | https/tcp 443 | échange de données sécurisées | critique |
-|
+
+NB: Nous rappelons que cette matrice qui décrit les communications entre les différentes zones ou équipements du réseau est essentielle pour la conception des règles de filtrage et la compréhension des dépendances.
 
 ### 4. Plan VLAN
 Proposition d'un plan VLAN pour un laboratoire type (nom, plage IP, équipements rattachés).
