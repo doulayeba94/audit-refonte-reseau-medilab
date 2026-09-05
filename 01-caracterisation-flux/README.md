@@ -23,6 +23,18 @@ Classification des flux MediLab (téléphonie IP, application LIMS, messagerie E
 
 ### 2. Calcul de bande passante VoIP
 Calcul du nombre d'appels simultanés en heure de pointe, de la bande passante VoIP nécessaire, et vérification de la suffisance de la liaison 100 Mbps.
+A partir des données trafic fournies par l'équipe IT la bande passante VoIP nécessaire est calculée ci-dessous:
+| Eléments | valeur/calcul|resultat|
+|---|---|---|---|
+| appels simultanés maximum | 60 × 87 kbps | 5 220 kbps |
+| Bande passante VoIP nécessaire | 5 220 / 1 000 | 5,22 Mbps |
+| Marge de sécurité | 5,22 × 30 % | 1,57 Mbps |
+| bande passante avec la marge | 5,22 + 1,57 Mbps | 6,8 Mbps |
+| bande passante WAN disponible |            | 100 Mbps/site  |
+| bande passante reste | 100 - 6,8 | 93,8 Mbps |
+| conclusion | 6,8 < 100 | liaison suffisante |
+NB: la marge de 30% correspond aux en-têtes IP/UDP/RTP, du VPN IPSec et une marge d'exploitation.
+
 
 ### 3. Matrice de flux
 Construction de la matrice de flux (source, destination, protocole/port, description, criticité) pour les échanges clés (postes labo ↔ Srv-LIMS, téléphonie IP ↔ IPBX, Srv-LIMS ↔ Sécurité Sociale, etc.).
