@@ -41,6 +41,9 @@ A partir des données trafic fournies par l'équipe IT la bande passante VoIP n�
 ### 3. Matrice de flux
 Construction de la matrice de flux (source, destination, protocole/port, description, criticité) pour les échanges clés (postes labo ↔ Srv-LIMS, téléphonie IP ↔ IPBX, Srv-LIMS ↔ Sécurité Sociale, etc.).
 
+| source | destination | protocole/port | description | criticité |
+| poste labo ↔ Srv-LIMS | tcp/422             |accés application LIMS             |      critique      |
+
 ### 4. Plan VLAN
 Proposition d'un plan VLAN pour un laboratoire type (nom, plage IP, équipements rattachés).
 
