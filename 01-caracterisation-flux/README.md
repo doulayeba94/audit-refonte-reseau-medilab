@@ -52,11 +52,20 @@ NB: Nous rappelons que cette matrice qui décrit les communications entre les di
 ### 4. Plan VLAN
 Proposition d'un plan VLAN pour un laboratoire type (nom, plage IP, équipements rattachés).
 
+| nom | plage IP | équipements rattachés |
+| --- |--- | --- |
+| Vlan_user | 192.168.10.1 - 192.168.10.254/24 | postes utilisateur imprimantes |
+| Vlan_biomed | 192.168.20.1 - 192.168.20.254/24 | automate biomet |
+| Vlan_voix | 192.168.30.1 - 192.168.20.254/24 | telephone ip |
+| Vlan_Wifi | 192.168.40.1 - 192.168.40.254/24 | wifi |
+| Vlan_management | 192.168.99.1 - 192.168.99.254/24 | routeur, switchs |
+
 ### 5. Analyse VPN
 Analyse de l'architecture VPN IPSec actuelle (avantages/inconvénients), proposition de solution pour le télétravail des biologistes, et comparatif IPSec vs SSL VPN selon les usages (liaison labo-siège, télétravail, accès partenaires).
 
 ### 6. Schéma d'architecture (bonus)
 Schéma simplifié de l'architecture réseau MediLab existante (siège, 2 laboratoires, VPN, serveurs principaux, flux critiques) :
+
 
 ![Architecture existante](../docs/schemas/architecture-existante.svg)
 
