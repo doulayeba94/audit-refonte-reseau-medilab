@@ -8,6 +8,7 @@ Suite aux problèmes de lenteur et à une panne de 6 heures, la direction de Med
 
 ### 1. Analyse des métriques
 Interprétation des données collectées lors de l'audit (métriques de supervision) et identification des goulots d'étranglement de l'infrastructure.
+
 a) Interprétation des résultats
 Nous rappelons que les résultats sont issues des collectes fournies par l'équipe IT.
 | Métrique | Statut | Analyse / Cause probable |
@@ -18,6 +19,14 @@ Nous rappelons que les résultats sont issues des collectes fournies par l'équi
 | CPU LIMS pics à 95% | Problématique | Surcharge du serveur applicatif concentrée sur le créneau 9h-11h (heure de pointe métier) — probable sous-dimensionnement serveur ou absence de répartition de charge |
 | Erreurs CRC 12/jour | Problématique | Taux d'erreurs anormal sur une interface réseau — signe probable d'un problème physique (câble défectueux, duplex mismatch) sur le port du serveur fichiers |
 | VoIP MOS 3.8 | Problématique | Sous le seuil de qualité acceptable (>4.0) — cohérent avec la perte de paquets et la saturation WAN identifiées : la VoIP est la première victime de la congestion du lien |
+
+b) Goulots d'étranglement (classés par criticité)
+
+| Rang | Goulot identifié | Impact sur le service |
+|---|---|---|
+| 1 | Saturation du lien WAN (pics à 98%) | Cause racine principale : dégrade simultanément la latence, la perte de paquets et la qualité VoIP — impact transverse sur tous les usages inter-sites |
+| 2 | Surcharge CPU du serveur LIMS (pics à 95% en heure de pointe) | Ralentissement direct de l'application métier critique pendant les heures d'activité les plus chargées, risque de dégradation du service labo |
+| 3 | Erreurs CRC sur le port du serveur fichiers | Impact plus localisé mais révélateur d'un problème matériel non traité, pouvant évoluer vers une panne complète du lien (cohérent avec la panne de 6h déjà survenue) |
 
 ### 2. Plan de tests complémentaires
 Définition des tests techniques à réaliser pour compléter le diagnostic, et proposition d'une solution de supervision à mettre en place.
