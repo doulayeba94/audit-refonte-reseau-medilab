@@ -61,7 +61,7 @@ L'architecture cible et la politique de sécurité étant validées, la directio
 | Marge de sécurité (10%) | | | 27 396 € |
 | **TOTAL CAPEX (version initiale)** | | | **301 356 €** |
 
-### ⚠️ Le CAPEX respecte-t-il l'enveloppe de 250 000 € ?
+###  Le CAPEX respecte-t-il l'enveloppe de 250 000 € ?
 
 **Non.** Le chiffrage initial dépasse le plafond de **51 356 €**. Le poste le plus lourd est la redondance systématique des switchs de distribution L3 (2 par site × 6 sites = 96 000 €), suivie de l'intégration (44 660 €, calculée en haut de fourchette à 20%).
 
@@ -85,7 +85,7 @@ L'architecture cible et la politique de sécurité étant validées, la directio
 | Marge de sécurité (10%) | 22 657 € |
 | **TOTAL CAPEX OPTIMISÉ** | **249 227 €** |
 
-**✅ Conforme** : 249 227 € < 250 000 € (marge résiduelle : 773 €, très serrée — aucune dérive tarifaire tolérable sans repasser au-dessus du plafond).
+** Conforme** : 249 227 € < 250 000 € (marge résiduelle : 773 €, très serrée — aucune dérive tarifaire tolérable sans repasser au-dessus du plafond).
 
 ---
 
@@ -108,7 +108,7 @@ L'architecture cible et la politique de sécurité étant validées, la directio
 | Formation continue équipe IT | 125 € | 1 500 € |
 | **TOTAL OPEX** | **4 987 €** | **59 844 €** |
 
-**✅ Conforme** : 4 987 €/mois < 5 000 €/mois (marge résiduelle : 13 €/mois — également très serrée).
+** Conforme** : 4 987 €/mois < 5 000 €/mois (marge résiduelle : 13 €/mois — également très serrée).
 
 ### 2.2 Calcul du TCO sur 5 ans et du ROI
 
@@ -129,7 +129,7 @@ Délai de retour = CAPEX / (Gains annuels − OPEX annuel)
 Délai de retour = 249 227 / 60 156 ≈ 4,14 ans
 ```
 
-### ⚠️ Le délai de retour respecte-t-il l'objectif de 3 ans ?
+###  Le délai de retour respecte-t-il l'objectif de 3 ans ?
 
 **Non.** Avec les tarifs officiels, même après optimisation pour respecter les enveloppes CAPEX/OPEX, **le délai de retour réel est d'environ 4 ans et 2 mois, contre un objectif de 3 ans.**
 
