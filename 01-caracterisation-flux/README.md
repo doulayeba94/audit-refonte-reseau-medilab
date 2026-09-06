@@ -63,6 +63,25 @@ Proposition d'un plan VLAN pour un laboratoire type (nom, plage IP, équipements
 ### 5. Analyse VPN
 Analyse de l'architecture VPN IPSec actuelle (avantages/inconvénients), proposition de solution pour le télétravail des biologistes, et comparatif IPSec vs SSL VPN selon les usages (liaison labo-siège, télétravail, accès partenaires).
 
+| Usage | Technologie | Justification |
+|---|---|---|
+| Connexion laboratoire-siège | VPN IPSec site-à-site | Liaison permanente inter-sites, chiffrement du trafic institutionnel |
+| Télétravail biologistes | VPN SSL (client-to-site) | Accès nomade individuel, authentification utilisateur, MFA |
+| Accès partenaires externes | VPN IPSec restreint vers DMZ | Flux applicatif défini, isolation stricte du LAN interne, moindre privilège |
+
+Avantage et inconvénients:
+a) 3 avantages de l'architecture VPN IPSec actuelle.
+
+1) Sécurité au niveau réseau : chiffrement de bout en bout du trafic entre sites, protégeant les données de santé qui transitent sur les liaisons inter-sites (exigence implicite HDS).
+2) Coût maîtrisé : le VPN IPSec s'appuie sur une liaison fibre standard (100 Mbps) sans nécessiter un lien opérateur dédié coûteux comme le MPLS.
+3) Simplicité de mise en œuvre : technologie mature, largement supportée par la quasi-totalité des équipementiers réseau (routeurs, pare-feu), facile à déployer sur des sites déjà équipés.
+
+b) 3 inconvénients ou risques
+
+1) Pas de garantie de qualité de service (QoS) : contrairement au MPLS, l'IPSec classique sur Internet/fibre ne garantit ni la latence ni la bande passante — problématique pour les flux critiques (VoIP, SIL) en heure de pointe
+2) Point unique de défaillance (SPOF) : si le tunnel VPN ou la liaison fibre tombe, le site est totalement isolé, sans lien de secours (pas de redondance identifiée dans l'architecture actuelle).
+3) Overhead de chiffrement : l'encapsulation IPSec réduit le débit utile réel (typiquement 15-25% de perte selon le mode), ce qui réduit d'autant la bande passante réellement disponible sur les 100 Mbps annoncés
+
 ### 6. Schéma d'architecture (bonus)
 Schéma simplifié de l'architecture réseau MediLab existante (siège, 2 laboratoires, VPN, serveurs principaux, flux critiques) :
 
