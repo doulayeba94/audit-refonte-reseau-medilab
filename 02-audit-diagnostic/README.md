@@ -59,22 +59,12 @@ Les seuils critical correspondent aux valeurs déjà observées lors de l'audit 
 ### 3. Ébauche de rapport d'audit
 - Synthèse des constats (documentaire, technique, sécurité)
 
-  L'audit technique de l'infrastructure réseau MediLab révèle une saturation
-critique du lien WAN inter-sites (pics à 98% d'utilisation), identifiée
-comme cause racine de la dégradation généralisée du service : latence
-élevée (jusqu'à 180ms), perte de paquets (0,5%) et qualité VoIP dégradée
-(MOS 3.8, sous le seuil acceptable de 4.0). En parallèle, le serveur
-applicatif LIMS présente des pics de charge CPU à 95% pendant les heures
-de pointe (9h-11h), risquant de ralentir l'accès à l'application métier
-critique des laboratoires. Des erreurs CRC récurrentes (12/jour) sur le
-port du serveur fichiers signalent un problème matériel non traité,
-cohérent avec la panne de 6 heures déjà survenue et représentant un risque
-de récidive. Aucune solution de supervision proactive n'étant en place à
-ce jour, ces dysfonctionnements ne sont détectés qu'après impact sur les
-utilisateurs. L'architecture actuelle, initialement dimensionnée pour un
-usage plus restreint, ne dispose d'aucune redondance ni de priorisation
-du trafic (QoS), ce qui amplifie l'effet de la saturation sur l'ensemble
-des flux critiques.
+L'audit technique de l'infrastructure réseau MediLab révèle une saturation critique du lien WAN inter-sites (pics à 98% d'utilisation), identifiée comme cause racine de la dégradation généralisée du service : latence élevée (jusqu'à 180ms), perte de paquets (0,5%) et qualité VoIP dégradée (MOS 3.8, sous le seuil acceptable de 4.0).
+En parallèle, le serveur applicatif LIMS présente des pics de charge CPU à 95% pendant les heures de pointe (9h-11h), risquant de ralentir l'accès à l'application métier critique des laboratoires. Des erreurs CRC récurrentes (12/jour) sur le port du serveur fichiers signalent un problème matériel non traité, cohérent avec la panne de 6 heures déjà survenue et représentant un risque de récidive. 
+Aucune solution de supervision proactive n'étant en place à ce jour, ces dysfonctionnements ne sont détectés qu'après impact sur les
+utilisateurs.
+L'architecture actuelle, initialement dimensionnée pour un usage plus restreint, ne dispose d'aucune redondance ni de priorisation
+du trafic (QoS), ce qui amplifie l'effet de la saturation sur l'ensemble des flux critiques.
 
 - Recommandations priorisées (quick wins vs actions structurantes)
 
