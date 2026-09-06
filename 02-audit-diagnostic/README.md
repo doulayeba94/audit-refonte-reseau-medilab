@@ -42,7 +42,7 @@ a) tests à réaliser
 
 b) Proposition de solution de supervision à mettre en place
 
-| Indicateur | Équipement | Seuil warning | Seuil critique |
+| Indicateur | Équipement | Seuil d'avertissement | Seuil critique |
 |---|---|---|---|
 | Utilisation bande passante WAN | Routeur/lien Colmar | 75% | 90% |
 | Latence (RTT) | Lien WAN inter-sites | 80 ms | 150 ms |
