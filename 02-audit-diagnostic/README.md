@@ -31,6 +31,31 @@ b) Goulots d'étranglement (classés par criticité)
 ### 2. Plan de tests complémentaires
 Définition des tests techniques à réaliser pour compléter le diagnostic, et proposition d'une solution de supervision à mettre en place.
 
+a) tests à réaliser
+
+| Problème à investiguer | Outil/Commande | Objectif du test |
+|---|---|---|
+| Saturation WAN | iperf3 (test de charge dédié hors heures de pointe) + relevé SNMP continu sur 48h | Confirmer le débit réel disponible et identifier précisément les créneaux et la durée des pics de saturation |
+| Performance LIMS | Moniteur de ressources serveur (top/htop, Perfmon) + analyse des requêtes lentes côté base de données | Déterminer si la surcharge CPU vient du serveur lui-même (sous-dimensionnement) ou d'une requête applicative mal optimisée |
+| Erreurs CRC | Vérification physique du câblage + `show interface` sur le switch (compteurs d'erreurs, statut duplex) | Confirmer si la cause est un défaut de câble, un mauvais connecteur, ou une négociation duplex incorrecte (half/full duplex mismatch) |
+| Qualité VoIP | Capture Wireshark sur le flux RTP + mesure de la gigue (jitter) et du délai | Isoler si la dégradation MOS vient de la perte de paquets, de la gigue, ou de la priorisation QoS absente sur le lien WAN |
+
+b) Proposition de solution de supervision à mettre en place
+
+| Indicateur | Équipement | Seuil warning | Seuil critique |
+|---|---|---|---|
+| Utilisation bande passante WAN | Routeur/lien Colmar | 75% | 90% |
+| Latence (RTT) | Lien WAN inter-sites | 80 ms | 150 ms |
+| Taux de perte de paquets | Lien WAN inter-sites | 0,3% | 1% |
+| CPU serveur LIMS | Serveur applicatif LIMS | 70% | 90% |
+| MOS VoIP | Passerelle/gateway VoIP | 4.0 | 3.5 |
+
+c) Choix logique des seuils d'alertes
+
+Les seuils warning sont fixés avant que le problème devienne visible pour l'utilisateur (permet une action préventive)
+Les seuils critical correspondent aux valeurs déjà observées lors de l'audit (ex: 98% de charge WAN, MOS 3.8) — ce qui a été mesuré comme problématique devient le déclencheur d'alerte.
+
+
 ### 3. Ébauche de rapport d'audit
 - Synthèse des constats (documentaire, technique, sécurité)
 - Recommandations priorisées (quick wins vs actions structurantes)
