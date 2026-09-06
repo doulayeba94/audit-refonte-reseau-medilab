@@ -8,6 +8,16 @@ Suite aux problèmes de lenteur et à une panne de 6 heures, la direction de Med
 
 ### 1. Analyse des métriques
 Interprétation des données collectées lors de l'audit (métriques de supervision) et identification des goulots d'étranglement de l'infrastructure.
+a) Interprétation des résultats
+Nous rappelons que les résultats sont issues des collectes fournies par l'équipe IT.
+| Métrique | Statut | Analyse / Cause probable |
+|---|---|---|
+| Latence 45ms (pic 180ms) | Problématique | Latence de base acceptable, mais le pic à 180ms en heures de pointe (4x la moyenne) indique une saturation ponctuelle du lien WAN plutôt qu'un problème de distance/routage |
+| Perte paquets 0,5% | Limite | Proche du seuil acceptable (<1%) mais suffisant pour dégrader la VoIP et les sessions applicatives sensibles à la perte (cohérent avec le MOS VoIP faible) |
+| Liaison WAN pics à 98% | Problématique | Lien quasiment saturé en heure de pointe (utilisation moyenne 65%, pics à 98%) — cause directe de la latence et de la perte de paquets observées |
+| CPU LIMS pics à 95% | Problématique | Surcharge du serveur applicatif concentrée sur le créneau 9h-11h (heure de pointe métier) — probable sous-dimensionnement serveur ou absence de répartition de charge |
+| Erreurs CRC 12/jour | Problématique | Taux d'erreurs anormal sur une interface réseau — signe probable d'un problème physique (câble défectueux, duplex mismatch) sur le port du serveur fichiers |
+| VoIP MOS 3.8 | Problématique | Sous le seuil de qualité acceptable (>4.0) — cohérent avec la perte de paquets et la saturation WAN identifiées : la VoIP est la première victime de la congestion du lien |
 
 ### 2. Plan de tests complémentaires
 Définition des tests techniques à réaliser pour compléter le diagnostic, et proposition d'une solution de supervision à mettre en place.
